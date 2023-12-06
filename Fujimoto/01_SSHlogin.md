@@ -58,10 +58,10 @@ Last login: Thu Dec 17 15:17:20 2020 from XX
 
 ```
 login as: [共有サーバーのアカウント名]
-[共有サーバーのアカウント名]@[serverName].u-ryukyu.ac.jp's password: 
+xxxxx@server.address's password: 
 # [パスワードの入力]
 
-[[共有サーバーのアカウント名]@[serverName].u-ryukyu.ac.jp ~]$
+[xxxxx@server.address ~]$
 
 # 共有フォルダの確認
 $ ls /mnt/bioInfo/bioInfo2023_share
