@@ -1,7 +1,9 @@
 # コマンドライン入門
-藤本真悟（医学部・附属実験実習機器センター）  
+藤本真悟（総合技術部 / 医学部附属実験実習機器センター）  
 和智仲是（熱帯生物圏研究センター・西表研究施設）  
 作成：2022年12月20日
+更新：2023年12月06日
+
 ___
 
 # コマンドラインでよく使う操作
@@ -29,7 +31,7 @@ top -u [ユーザー名]
 # 以下のファイルは、メダカのリファレンスゲノムの塩基配列情報
 # ファイルが大きいので(約700MB, 7億塩基を含む)、catで開くと終了まで時間がかかる
 
-cat /mnt/bioInfo/bioInfo2022_share/sfujimoto/medaka_HdrR_genome.fasta
+cat /mnt/bioInfo/bioInfo2023_share/sfujimoto/medaka_HdrR_genome.fasta
 
 # 実行途中で強制終了するには
 # キーボードのCtrl, c を同時に押下
@@ -40,7 +42,7 @@ cat /mnt/bioInfo/bioInfo2022_share/sfujimoto/medaka_HdrR_genome.fasta
 
 ```
 # 2. と同様にメダカのゲノムを表示
-cat /mnt/bioInfo/bioInfo2022_share/sfujimoto/medaka_HdrR_genome.fasta
+cat /mnt/bioInfo/bioInfo2023_share/sfujimoto/medaka_HdrR_genome.fasta
 
 # 実行途中で一時停止したいときは
 # キーボードのCtrl, z を同時に押下
@@ -74,10 +76,10 @@ Github (https://github.co.jp) では、プログラムや関連するドキュ�
 
 ```
 # Github上のURLを指定
-git clone https://github.com/wachinakatada/22_seimeijoho.git
+git clone https://github.com/wachinakatada/23_seimeijoho.git
 
 # ファイルのリストを表示
-# 22_seimeijohoというディレクトリが作成されているか確認
+# 23_seimeijohoというディレクトリが作成されているか確認
 ls -l
 
 ```
@@ -86,7 +88,7 @@ ls -l
 
 ```
 # ファイルの内容を表示して確認
-cat /mnt/bioInfo/bioInfo2022_share/sfujimoto/textSample.txt
+cat /mnt/bioInfo/bioInfo2023_share/sfujimoto/textSample.txt
 
 # 数値が5行分含まれる
 #   0
@@ -98,7 +100,7 @@ cat /mnt/bioInfo/bioInfo2022_share/sfujimoto/textSample.txt
 
 # 同じ行を2回繰り返して表示する
 # while read: txtRowという名前の変数として、1行分の情報を保持する
-cat /mnt/bioInfo/bioInfo2022_share/sfujimoto/textSample.txt | while read txtRow
+cat /mnt/bioInfo/bioInfo2023_share/sfujimoto/textSample.txt | while read txtRow
 do
  # 変数の中身を表示する
  echo $txtRow 
@@ -106,7 +108,7 @@ do
 done
 
 # 0 を X に置換した出力結果を表示する
-cat /mnt/bioInfo/bioInfo2022_share/sfujimoto/textSample.txt | while read line
+cat /mnt/bioInfo/bioInfo2023_share/sfujimoto/textSample.txt | while read line
 do
  echo $line | sed -e 's/0/X/g' 
 done
