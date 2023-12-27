@@ -171,7 +171,7 @@ $ spades.py \
 -o HQ_assembled
 ```
 
-- アセンブルされたデータ（scaffolds.fasta）を一つ上のディレクトリに移す
+- アセンブルされたデータ`scaffolds.fasta`を一つ上のディレクトリに移す
 
 形
 ```
@@ -187,7 +187,7 @@ $ cp scaffolds.fasta ./..
 ### 3-⑤ Assemblyの評価 [quast]
 - `quast`
 
-- 複数のSPAdesのoutputを扱う場合は、outputのscaffolds.fastaの名前の変更を推奨
+- 複数の`SPAdes`のアウトプットを扱う場合は、アウトプット`scaffolds.fasta`の名前の変更を推奨
 ```
 例(c)の場合
 scaffolds.fasta を　HQ.scaffold.fasta に。
@@ -209,11 +209,11 @@ $ mv scaffolds.fasta HQ.scaffolds.fasta
 形
 ```
 $ quast.py [アセンブルされたファイル名 (.fasta)] -o [outputのフォルダ名]
-#outputのフォルダ名を指定しなくても自動的にフォルダは生成されるが、それぞれのフォルダ名の設定を推奨
+#オプション`-o`でアウトプットのフォルダ名を指定しなくても自動的にフォルダは生成されるが、それぞれのフォルダ名の設定を推奨
 ```
 例 (c)
 ```
 $ quast.py HQ.scaffolds.fasta -o HQ_scaffolds
 
-#終了後、outputフォルダをフォルダごと各自のPCに移動させ、各自のPCにてhtmlファイルを参照する
+#終了後、アウトプットフォルダをフォルダごと各自のPCに移動させ、各自のPCにてhtmlファイルを参照する
 ```
