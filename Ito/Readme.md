@@ -27,7 +27,7 @@ $ cp –r [ディレクトリ名] [コピー先ディレクトリ名]
 ```
 例
 ```
-$ cp -r /mnt/bioInfo/bioInfo2023_share/ito/genome genome
+cp -r /mnt/bioInfo/bioInfo2023_share/ito/genome genome
 ```
 
 ### 2. 次世代シーケンスデータの中身を見る
@@ -39,7 +39,7 @@ $ less [ファイル名]
 ```
 例
 ```
-$ zless HQ_R1.fastq.gz  
+zless HQ_R1.fastq.gz  
 # qのキーを押してストップ
 ```
 
@@ -50,7 +50,7 @@ $ seqkit stat [ファイル名]
 ```
 例
 ```
-$ seqkit stat HQ_R1.fastq.gz
+seqkit stat HQ_R1.fastq.gz
 ```
 
 ### 3-① Raw dataのquality確認 [fastqc] 
@@ -63,7 +63,7 @@ $ mkdir [フォルダ名]
 ```
 例
 ```
-$ mkdir fastqc_HQ_R1 
+mkdir fastqc_HQ_R1 
 ```
 
 - 次に`fastqc`で解析
@@ -74,7 +74,7 @@ $ fastqc -o [outputのフォルダ名]/ [inputのファイル名] -t [数値]
 ```
 例
 ```
-$ fastqc -o fastqc_HQ_R1/ HQ_R1.fastq.gz -t 2 
+fastqc -o fastqc_HQ_R1/ HQ_R1.fastq.gz -t 2 
 ```
 
 ### 3-② Read1(R1) とRead2 (R2) のmerge [vsearch --fastq_mergepaires]
@@ -92,7 +92,7 @@ $ vsearch --fastq_mergepairs [ファイル名 (R1, .fastq.gz)] \
 
 例
 ```
-$ vsearch --fastq_mergepairs HQ_R1.fastq.gz \
+vsearch --fastq_mergepairs HQ_R1.fastq.gz \
 -reverse HQ_R2.fastq.gz \
 --fastqout merged_HQ.fastq \
 --fastqout_notmerged_fwd notmerged_fwd_HQ.fastq \
@@ -110,16 +110,20 @@ $ vsearch --fastx_filter [ファイル名(.fastq)] \
 --fastq_truncee [数値] --fastq_truncqual [数値] \
 ```
 
+
+例（c）
 ```
-例（c）　#マージされた配列をQC
-$ vsearch --fastx_filter merged_HQ.fastq \
+# マージされた配列をQC
+vsearch --fastx_filter merged_HQ.fastq \
 --fastqout qc_merged_HQ.fastq \
 --fastaout qc_merged_HQ.fasta \
 --fastq_truncee 0.5 --fastq_truncqual 10
 ```
+
+例（c-2）
 ```
-例（c-2） #マージされた配列、マージされなかったR1配列、マージされなかったR2配列をまとめてQC
-$ vsearch --fastx_filter merged_HQ.fastq \
+#マージされた配列、マージされなかったR1配列、マージされなかったR2配列をまとめてQC
+vsearch --fastx_filter merged_HQ.fastq \
 --fastqout qc_merged_HQ.fastq \
 --fastaout qc_merged_HQ.fasta \
 --fastq_truncee 0.5 --fastq_truncqual 10 \
@@ -148,7 +152,7 @@ $ spades.py \
 
 例 (a)
 ```
-$ spades.py \
+spades.py \
 -1 HQ_R1.fastq.gz \
 -2 HQ_R2.fastq.gz \
 --only-assembler -k auto -t 2 --careful \
@@ -165,18 +169,20 @@ $ spades.py \
 --only-assembler -k auto -t [数値] --careful \
 -o [outputのフォルダ名]
 ```
+
 例 (c)
 ```
-$ spades.py \
+spades.py \
 -1 qc_notmerged_fwd_HQ.fasta \
 -2 qc_notmerged_rev_HQ.fasta \
 --merged qc_merged_HQ.fasta \
 --only-assembler -k auto -t 12 --careful \
 -o HQ_assembled
 ```
+
 例 (d)
 ```
-$ spades.py \
+spades.py \
 -1 notmerged_fwd_HQ.fastq \
 -2 notmerged_rev_HQ.fastq \
 --merged merged_HQ.fastq \
@@ -192,9 +198,9 @@ $ cp [ファイル名] [コピー先ディレクトリ名]
 ```
 例
 ```
-$ cp scaffolds.fasta /home/[username]/genome
-または
-$ cp scaffolds.fasta ./..
+# cp scaffolds.fasta /home/[username]/genome
+# または
+cp scaffolds.fasta ./..
 ```
 
 ### 3-⑤ Assemblyの評価 [quast]
@@ -203,7 +209,7 @@ $ cp scaffolds.fasta ./..
 - 複数の`SPAdes`のアウトプットを扱う場合は、アウトプット`scaffolds.fasta`の名前の変更を推奨
 ```
 例(c)の場合
-scaffolds.fasta を　HQ.scaffold.fasta に。
+scaffolds.fasta -> HQ.scaffold.fasta に。
 ```
 
 - ファイルの名前の変更
@@ -214,7 +220,7 @@ $ mv [ファイル名] [新ファイル名]
 ```
 例
 ```
-$ mv scaffolds.fasta HQ.scaffolds.fasta
+mv scaffolds.fasta HQ.scaffolds.fasta
 ```
 
 - `quast`の実行
@@ -224,9 +230,9 @@ $ mv scaffolds.fasta HQ.scaffolds.fasta
 $ quast.py [アセンブルされたファイル名 (.fasta)] -o [outputのフォルダ名]
 #オプション`-o`でアウトプットのフォルダ名を指定しなくても自動的にフォルダは生成されるが、それぞれのフォルダ名の設定を推奨
 ```
+
 例 (c)
 ```
-$ quast.py HQ.scaffolds.fasta -o HQ_scaffolds
-
+quast.py HQ.scaffolds.fasta -o HQ_scaffolds
 #終了後、アウトプットフォルダをフォルダごと各自のPCに移動させ、各自のPCにてhtmlファイルを参照する
 ```
