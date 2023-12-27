@@ -188,27 +188,32 @@ $ cp scaffolds.fasta ./..
 - `quast`
 
 - 複数のSPAdesのoutputを扱う場合は、outputのscaffolds.fastaの名前の変更を推奨
-　例(c)の場合
-　scaffolds.fasta を　HQ.scaffold.fasta に。
+```
+例(c)の場合
+scaffolds.fasta を　HQ.scaffold.fasta に。
+```
 
-
-#ファイルの名前の変更
+- ファイルの名前の変更
 
 形
+```
 $ mv [ファイル名] [新ファイル名]
-
+```
 例
+```
 $ mv scaffolds.fasta HQ.scaffolds.fasta
+```
 
-
-＃quast
+- `quast`の実行
 
 形
+```
 $ quast.py [アセンブルされたファイル名 (.fasta)] -o [outputのフォルダ名]
-＃outputのフォルダ名を指定しなくても自動的にフォルダは生成されるが、それぞれのフォルダ名の設定を推奨
-
+#outputのフォルダ名を指定しなくても自動的にフォルダは生成されるが、それぞれのフォルダ名の設定を推奨
+```
 例 (c)
+```
 $ quast.py HQ.scaffolds.fasta -o HQ_scaffolds
 
-＃終了後、outputフォルダをフォルダごと各自のPCに移動させ、各自のPCにてhtmlファイルを参照する
-
+#終了後、outputフォルダをフォルダごと各自のPCに移動させ、各自のPCにてhtmlファイルを参照する
+```
