@@ -7,6 +7,19 @@
 
 <img src="https://raw.githubusercontent.com/wachinakatada/23_seimeijoho/main/Ito/Figure/ゲノムアセンブリーの流れ.jpg" width="1000">
 
+#### 使用するツール
+- コマンド
+- - cp
+  - zless
+  - mkdir
+  - mv
+- 解析ツール
+- - seqkit
+  - fastqc
+  - vsearch
+  - SPAdes
+  - quast
+
 ### 1. ディレクトリをコピーする
 形
 ```
