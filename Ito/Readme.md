@@ -39,7 +39,7 @@ $ seqkit stat [ファイル名]
 例
 $ seqkit stat HQ_R1.fastq.gz
 
-#### 3-① Raw dataのquality確認 [fastqc] 
+### 3-① Raw dataのquality確認 [fastqc] 
 
 ＃解析結果の出力フォルダの事前作成が必要
 
@@ -61,7 +61,7 @@ $ fastqc -o fastqc_HQ_R1/ HQ_R1.fastq.gz -t 2
 
 
 
-② Read1(R1) とRead2 (R2) のmerge [vsearch --fastq_mergepaires]
+### 3-② Read1(R1) とRead2 (R2) のmerge [vsearch --fastq_mergepaires]
 
 形
 $ vsearch --fastq_mergepairs [ファイル名 (R1, .fastq.gz)] \
@@ -82,7 +82,7 @@ $ vsearch --fastq_mergepairs HQ_R1.fastq.gz \
 
 
 
-③ Quality control [vsearch --fastxfilter]
+### 3-③ Quality control [vsearch --fastxfilter]
 
 形
 $ vsearch --fastx_filter [ファイル名(.fastq)] \
@@ -113,7 +113,7 @@ $ vsearch --fastx_filter merged_HQ.fastq \
 
 
 
-④ Assembly [SPAdes]
+### 3-④ Assembly [SPAdes]
 
 形 (a)・(b)
 $ spades.py \
@@ -122,7 +122,7 @@ $ spades.py \
 --only-assembler -k auto -t [数値] (--careful) \
 -o [outputのフォルダ名]
 
-# --carefulは任意 (使用推奨、ただし時間とメモリが必要)
+#--carefulは任意 (使用推奨、ただし時間とメモリが必要)
 
 例 (a)
 $ spades.py \
@@ -171,7 +171,7 @@ $ cp scaffolds.fasta ./..
 
 
 
-⑤ Assemblyの評価 [quast]
+### 3-⑤ Assemblyの評価 [quast]
 
 ＃複数のSPAdesのoutputを扱う場合は、outputのscaffolds.fastaの名前の変更を推奨
 
@@ -179,7 +179,7 @@ $ cp scaffolds.fasta ./..
 scaffolds.fasta →　HQ.scaffold.fasta
 
 
-＃ファイルの名前の変更
+#ファイルの名前の変更
 
 形
 $ mv [ファイル名] [新ファイル名]
