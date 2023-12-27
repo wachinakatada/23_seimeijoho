@@ -7,7 +7,7 @@
 
 <img src="https://raw.githubusercontent.com/wachinakatada/23_seimeijoho/main/Ito/Figure/ゲノムアセンブリーの流れ.jpg" width="1000">
 
-### ディレクトリをコピーする
+### 1. ディレクトリをコピーする
 形
 ```
 $ cp –r [ディレクトリ名] [コピー先ディレクトリ名]
@@ -17,20 +17,18 @@ $ cp –r [ディレクトリ名] [コピー先ディレクトリ名]
 $ cp -r /mnt/bioInfo/bioInfo2023_share/ito/genome genome
 ```
 
-
-
-＃次世代シーケンスデータの中身を見る
-
+### 2. 次世代シーケンスデータの中身を見る
 形
+```
 $ zless [ファイル名]
 または
 $ less [ファイル名]
-
+```
 例
+```
 $ zless HQ_R1.fastq.gz  
-
-qのキーを押してストップ
-
+# qのキーを押してストップ
+```
 
 
 ＃シーケンスデータのリード数を調べる
