@@ -31,7 +31,7 @@ $ zless HQ_R1.fastq.gz
 ```
 
 
-＃シーケンスデータのリード数を調べる
+### 3. シーケンスデータのリード数を調べる
 
 形
 $ seqkit stat [ファイル名]
@@ -39,9 +39,7 @@ $ seqkit stat [ファイル名]
 例
 $ seqkit stat HQ_R1.fastq.gz
 
-
-
-①　Raw dataのquality確認 [fastqc] 
+#### 3-① Raw dataのquality確認 [fastqc] 
 
 ＃解析結果の出力フォルダの事前作成が必要
 
