@@ -9,12 +9,12 @@
 
 #### 使用するツール
 - コマンド
-- - cp
+  - cp
   - zless
   - mkdir
   - mv
 - 解析ツール
-- - seqkit
+  - seqkit
   - fastqc
   - vsearch
   - SPAdes
