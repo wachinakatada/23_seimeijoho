@@ -5,5 +5,5 @@
 
 2021年12月22日版; 2022年12月23日改訂
 
-<img src="https://raw.githubusercontent.com/wachinakatada/23_seimeijoho/main/Ito/Figure/fig1.jpg" width="1000">
+<img src="https://raw.githubusercontent.com/wachinakatada/23_seimeijoho/main/Ito/Figure/ゲノムアセンブリーの流れ.jpg" width="1000">
 
