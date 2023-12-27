@@ -30,34 +30,39 @@ $ zless HQ_R1.fastq.gz
 # qのキーを押してストップ
 ```
 
-
 ### 3. シーケンスデータのリード数を調べる
-
 形
+```
 $ seqkit stat [ファイル名]
-
+```
 例
+```
 $ seqkit stat HQ_R1.fastq.gz
+```
 
 ### 3-① Raw dataのquality確認 [fastqc] 
 
-＃解析結果の出力フォルダの事前作成が必要
+- 解析結果の出力フォルダの事前作成が必要
 
 形
+```
 $ mkdir [フォルダ名] 
-
+```
 例
+```
 $ mkdir fastqc_HQ_R1 
+```
 
-
-次にfastqcで解析
+- 次に**fastqc**で解析
 
 形
+```
 $ fastqc -o [outputのフォルダ名]/ [inputのファイル名] -t [数値]
-
+```
 例
+```
 $ fastqc -o fastqc_HQ_R1/ HQ_R1.fastq.gz -t 2 
-
+```
 
 
 
