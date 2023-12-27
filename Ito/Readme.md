@@ -42,7 +42,7 @@ $ seqkit stat HQ_R1.fastq.gz
 
 ### 3-① Raw dataのquality確認 [fastqc] 
 
-- 解析結果の出力フォルダの事前作成が必要
+#解析結果の出力フォルダの事前作成が必要
 
 形
 ```
@@ -53,7 +53,7 @@ $ mkdir [フォルダ名]
 $ mkdir fastqc_HQ_R1 
 ```
 
-- 次に**fastqc**で解析
+- 次に`fastqc`で解析
 
 形
 ```
